@@ -48,6 +48,12 @@ class Educatrice extends Authenticatable
         return $this->hasMany(Enfant::class);
     }
 
+    //Une educatrice peut avoir plusieurs activites assignés
+    public function activites()
+    {
+        return $this->hasMany(Activites::class);
+    }
+
     //Une educatrice peut avoir plusieurs formations
     public function formations()
     {

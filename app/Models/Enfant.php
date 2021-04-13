@@ -21,6 +21,7 @@ class Enfant extends Model
         'name',
         'lastname',
         'sexe',
+        'programme',
         'date_naissance',
         'educatrice_id',
     ];
@@ -48,6 +49,19 @@ class Enfant extends Model
     {
         return $this->belongsToMany(Cmedicale::class, 'cmedicales_enfants');
     }
+
+    //L'enfent peut avoir plusieurs vaccins (relation many to many)
+    public function activites()
+    {
+        return $this->belongsToMany(Activites::class, 'activites_enfants');
+    }
+
+    //L'enfant peut avoir plusieurs paiements (relation many to many)
+    public function paiements()
+    {
+        return $this->hasMany(Paiement::class);
+    }
+
 
     //L'enfant est assigné à une educatrice (relation one to many(inverse) )
     public function educatrice()

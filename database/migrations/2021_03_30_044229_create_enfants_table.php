@@ -18,6 +18,7 @@ class CreateEnfantsTable extends Migration
             $table->string('name');
             $table->string('lastname');
             $table->string('sexe');
+            $table->text('programme');
             $table->date('date_naissance');
             $table->foreignId('educatrice_id')->constrained()->onDelete('cascade');
             $table->timestamps();

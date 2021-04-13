@@ -12,114 +12,103 @@
         </div>
     @endif
 
-    {{-- Formulaire d'enregistrement, juste un prototype --}}
-    <form class="needs-validation" action="{{ route('registereducatrice') }}" method="post" novalidate>
-        @csrf
+    <div class="container-md bg-light  shadow-lg p-4 mb-3">
+        <!-- Modal body SignUp -->
+        <div class="d-flex justify-content-center ">
+            <form action="{{ route('registereducatrice') }}" method="POST">
+                @csrf
+                <div class="form-row">
+                    <h2 class="text-centre">Création d'un compte Éducatrice</h2>
+                </div>
+                <br>
+                <h4 class="text-left text-muted">Information sur l'éducatrice</h4>
+                <!-- Nom et prenom-->
+                <div class="form-row">
+                    <div class="col">
+                        <input type="text" class="form-control" id="name" placeholder="Prénom" name="name" required>
+                        <div class="valid-feedback">Valider.</div>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" id="lastname" placeholder="Nom" name="lastname" required>
+                        <div class="valid-feedback">Valider.</div>
+                    </div>
+                </div>
+                <!-- Date de naissance et Sexe-->
 
-        <div class="mb-3">
-            <label for="name" class="form-label">Prenom</label>
-            <input type="text" class="form-control" name="name" id="name" placeholder="Prenom de l'educatrice"
-                value="{{ old('name') }}" required>
+                <br>
+                <div class="form-row">
+                    <div class="col">
+                        <span class="text-muted"><i class=" fa fa-calendar"> </i> Date de naissance</span>
+                        <input type="date" class="form-control" id="date_naissance" placeholder="AAAA/MM/JJ"
+                            name="date_naissance" required>
+                    </div>
 
-            <div class="invalid-feedback">
-                Champ Vide ou invalide
-            </div>
 
+                    <br>
+                    <div class="mb-1">
+                        <input class="form-check-input" type="radio" name="sexe" id="masculin" value="homme">
+                        <label class="form-check-label" for="masculin">
+                            Masculin
+                        </label>
+                    </div>
+                    <div class="mb-3">
+                        <input class="form-check-input" type="radio" name="sexe" id="feminin" value="femme" checked>
+                        <label class="form-check-label" for="feminin">
+                            Feminin
+                        </label>
+                    </div>
+                </div>
+                <br>
+                <div class="form-row">
+                    <span for="specialisation" class="text-muted">Date d'embauche</span>
+
+                    <input type="date" class="form-control" name="date_embauche" id="date_embauche"
+                        placeholder="Date d'embauche de l'educatrice" value="{{ old('lastname') }}" required>
+
+                </div>
+                <!-- Formations et specialisations-->
+
+                <br>
+                <div class="form-row">
+                    <span for="specialisation" class="text-muted">Formations</span>
+                    <input type="text" class="form-control" name="formation" id="formation"
+                        placeholder="Ajouter une formation" value="{{ old('formation') }}" required>
+
+                </div>
+
+                <br>
+                <div class="form-row">
+                    <span for="specialisation" class="text-muted">Specialisations</span>
+                    <input type="text" class="form-control" name="specialisation" id="specialisation"
+                        placeholder="Ajouter une specialisation" value="{{ old('specialisation') }}" required>
+
+                </div>
+
+
+                <br>
+                <div class="form-row">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Mot de passe"
+                        required>
+
+                    <div class="invalid-feedback">
+                        Champ Vide ou invalide
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+                    <input type="password" class="form-control" name="password_confirmation" id="password_confirmation"
+                        placeholder="Repeat Your password" required>
+
+
+                </div>
+
+                <br>
+                <!-- Bouton soumetre-->
+                <div class="">
+                    <button type="submit" name="signup" class="btn btn-success btn-block">Créer un compte</button>
+                </div>
+            </form>
         </div>
-
-        <div class="mb-3">
-            <label for="lastname" class="form-label">Nom</label>
-            <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Nom de l'educatrice"
-                value="{{ old('lastname') }}" required>
-
-            <div class="invalid-feedback">
-                Champ Vide ou invalide
-            </div>
-
-        </div>
-
-
-        <div class="mb-1">
-            <input class="form-check-input" type="radio" name="sexe" id="masculin" value="homme">
-            <label class="form-check-label" for="masculin">
-                Masculin
-            </label>
-        </div>
-        <div class="mb-3">
-            <input class="form-check-input" type="radio" name="sexe" id="feminin" value="femme" checked>
-            <label class="form-check-label" for="feminin">
-                Feminin
-            </label>
-        </div>
-
-        <div class="mb-3">
-            <label for="date_naissance" class="form-label">Date de naissance</label>
-            <input type="date" class="form-control" name="date_naissance" id="date_naissance"
-                placeholder="Date de naissance de l'educatrice" value="{{ old('lastname') }}" required>
-
-            <div class="invalid-feedback">
-                Champ Vide ou invalide
-            </div>
-
-        </div>
-
-        <div class="mb-3">
-            <label for="date_embauche" class="form-label">Date d'embauche</label>
-            <input type="date" class="form-control" name="date_embauche" id="date_embauche"
-                placeholder="Date d'embauche de l'educatrice" value="{{ old('lastname') }}" required>
-
-            <div class="invalid-feedback">
-                Champ Vide ou invalide
-            </div>
-
-        </div>
-
-
-        <div class="mb-3">
-            <label for="formation" class="form-label">Formations</label>
-            <input type="text" class="form-control" name="formation" id="formation" placeholder="Ajouter une formation"
-                value="{{ old('formation') }}" required>
-
-            <div class="invalid-feedback">
-                Champ Vide ou invalide
-            </div>
-
-        </div>
-
-        <div class="mb-3">
-            <label for="specialisation" class="form-label">Specialisations</label>
-            <input type="text" class="form-control" name="specialisation" id="specialisation"
-                placeholder="Ajouter une specialisation" value="{{ old('specialisation') }}" required>
-
-            <div class="invalid-feedback">
-                Champ Vide ou invalide
-            </div>
-        </div>
-
-
-        <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" name="password" id="password" placeholder="Mot de passe" required>
-
-            <div class="invalid-feedback">
-                Champ Vide ou invalide
-            </div>
-
-        </div>
-
-        <div class="mb-3">
-            <label for="password_confirmation" class="form-label">Repeter le mot de passe</label>
-            <input type="password" class="form-control" name="password_confirmation" id="password_confirmation"
-                placeholder="Repeat Your password" required>
-
-            <div class="invalid-feedback">
-                Champ Vide ou invalide
-            </div>
-
-        </div>
-
-
-
-        <button type="submit" class="btn btn-primary">Ajouter Educatrice</button>
-    </form>
+    </div>
 @endsection

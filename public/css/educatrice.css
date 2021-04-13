@@ -1,0 +1,143 @@
+h1 
+{
+	width : 100%;
+	margin-top : 15px;
+	background-color:#333;
+	color:#FFFFFF;
+	text-align:center;
+}
+
+h2
+{
+	width : 100%;
+	background-color:#333;
+	color:#FFFFFF;
+	text-align:center;
+	padding-left: 119px; 
+	margin-left: -5%;
+	
+}
+
+ label 
+{
+	font-size: 20px;
+    
+     width: 200px;
+     margin-right: 5px; 
+     margin-left: 5px; 
+    margin-bottom: 5px; 
+    
+    text-align: right; 
+}
+
+
+
+.buttonconfirm
+{
+    /*déjà en inline-block*/
+	border: 0px solid #999; 
+    width: 200px;
+    height: 50px;
+    padding: 6px;
+    font-size: 22.5px;
+	margin-top: 50px;
+    margin-left: 240px;
+	background-color:#333;
+	color:#FFFFFF;
+}
+
+.buttonRecherche
+{
+    /*déjà en inline-block*/
+	border: 0px solid #999; 
+    width: 170px;
+    height: 35px;
+    padding: 6px;
+    font-size: 22.5px;
+	margin-top: 50px;
+    margin-left: 10%;
+	background-color:#333;
+	color:#FFFFFF;
+}
+
+.behindBox
+{
+	
+	float: left; 
+	border: 1px solid #999; 
+	 
+	width: 100%;  
+	height: 140%;
+}
+
+.whiteBox
+{
+	
+	float: left; 
+	border: 0px solid #999; 
+	padding: 50px; 
+	width: 91%;  
+	height: 140%; 
+	margin-right: 3px;
+	margin-left: 3px;
+	margin-bottom: 3px;
+}
+
+.detailBox 
+{
+	background-color:  rgb(70, 67, 67, 0.6);
+	float: left; 
+	border: 0px solid #b0b0b0; 
+	padding: 0px; 
+	width: 40%;
+	height: 600px; 
+	color:#FFFFFF;
+	margin-left: 30%;
+	margin-top: 40px;
+	
+}
+
+.buttonBox 
+{
+	
+	margin-left: 20%;
+}
+.listBox 
+{
+	background-color:#FFFFFF;
+	float: left; 
+	border: 1px solid #b0b0b0; 
+	padding: 0px; 
+	width: 35%;
+	height: 410px; 
+	
+	margin-left: 8.5%;
+	margin-top: 40px;
+	
+}
+
+
+.coordBox 
+{
+	background-color:#FFFFFF;
+	float: left; 
+	border: 1px solid #b0b0b0; 
+	padding: 0px; 
+	width: 80%;
+	height: 400px; 
+	
+	margin-left: 8.5%;
+	margin-bottom: 80px;
+	
+}
+
+.rechercheBox 
+{
+	margin-left: 22%;
+	
+}
+
+textarea 
+{
+	margin-left: 40%; 
+}

@@ -60,6 +60,7 @@ class ModifierEnfantController extends Controller
                 'name' => $request->name,
                 'lastname' => $request->lastname,
                 'sexe' => $request->sexe,
+                'programme' => $request->programmes,
                 'date_naissance' => $request->date_naissance,
                 'educatrice_id' => $request->educatrices,
             ]
@@ -99,6 +100,25 @@ class ModifierEnfantController extends Controller
             ]);
         }
 
+
+        //Ajouter les allergies de l'enfant a partir des vaccins deja existants dans la base de données
+        if (!empty($request->input('allergies'))) {
+
+            $allergies = $request->input('allergies');
+
+            foreach ($allergies as $allergie) {
+                $alid = Allergie::updateOrCreate(
+                    [
+                        'description' => $allergie,
+                    ]
+                )->id;
+            }
+
+            AllergiesEnfants::updateOrCreate([
+                'enfant_id' => $eid,
+                'allergie_id' => $alid,
+            ]);
+        }
         //Enregistrer une allergie de l'enfant inexistant dans la base de donnée et lui assignée
         if (!empty($request->input('allergie'))) {
             $aid = Allergie::updateOrCreate(

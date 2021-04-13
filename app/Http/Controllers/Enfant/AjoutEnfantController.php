@@ -51,6 +51,7 @@ class AjoutEnfantController extends Controller
             'name' => 'required|max:255',
             'lastname' => 'required|max:255',
             'sexe' => 'required|in:homme,femme',
+            'programmes' => 'required|not_in:0',
             'date_naissance' => 'required|date_format:Y-m-d',
 
 
@@ -73,6 +74,7 @@ class AjoutEnfantController extends Controller
             'name' => $request->name,
             'lastname' => $request->lastname,
             'sexe' => $request->sexe,
+            'programme' => $request->programmes,
             'date_naissance' => $request->date_naissance,
             'educatrice_id' => $request->educatrices,
         ])->id;

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Enfant;
 
-use App\Http\Controllers\Controller;
 use App\Models\Enfant;
+use App\Models\Activites;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class EnfantController extends Controller
 {
@@ -15,6 +16,9 @@ class EnfantController extends Controller
 
         //$vaccin = $enfant->vaccin()
         //dd($enfant);
-        return view('enfant.enfant', ['enfant' => $enfant]);
+        //Extraire la liste des educatrices de la base de données
+        $allActivites = Activites::get();
+
+        return view('enfant.enfant', ['enfant' => $enfant, 'activites' => $allActivites]);
     }
 }
