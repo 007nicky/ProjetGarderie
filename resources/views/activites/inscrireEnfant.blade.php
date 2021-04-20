@@ -14,6 +14,30 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <style>
+        .banner {
+            background-image: url({{ asset('images/11.jpeg') }});
+        }
+
+        .bannerParticipant {
+            background-image: url({{ asset('images/2.jpg') }});
+        }
+
+        .bannerJeu {
+            background-image: url({{ asset('images/4.jpg') }});
+        }
+
+        .bannerSortie {
+            background-image: url({{ asset('images/5.jpg') }});
+        }
+
+        .bannerListe {
+            background-image: url({{ asset('images/8.jpg') }});
+        }
+
+    </style>
+
 </head>
 
 <body>
@@ -71,45 +95,37 @@
                 @endif
             </div>
 
-
-            <div class="item">
-                <p>Programme de l'enfant: {{ $enfant->programme }}</p>
-
-                <div class="invalid-feedback">
-                    Champ Vide ou invalide
-                </div>
-            </div>
-
             <div class="flax">
-
-                <div class="item">
+                <div class="mb-1">
                     <input class="form-check-input" type="radio" name="paiement" id="paye" value="paye">
-                    <label class="form-check-label" for="paye">
+                    <span class="form-check-label" for="paye">
                         Payé
-                    </label>
+                    </span>
                 </div>
-                <div class="item">
+                <div class="mb-3">
                     <input class="form-check-input" type="radio" name="paiement" id="impaye" value="impaye">
-                    <label class="form-check-label" for="impaye">
+                    <span class="form-check-label" for="impaye">
                         Non payé
-                    </label>
+                    </span>
                 </div>
             </div>
+
+            <hr>
 
             <div class="flax">
                 <div class="mb-1">
                     <input class="form-check-input" type="radio" name="admissibilite" id="admissible"
                         value="admissible">
-                    <label class="form-check-label" for="admissible">
+                    <span class="form-check-label" for="admissible">
                         Admissible
-                    </label>
+                    </span>
                 </div>
                 <div class="mb-3">
                     <input class="form-check-input" type="radio" name="admissibilite" id="inadmissible"
                         value="inadmissible">
-                    <label class="form-check-label" for="inadmissible">
+                    <span class="form-check-label" for="inadmissible">
                         Non admissible
-                    </label>
+                    </span>
                 </div>
             </div>
 

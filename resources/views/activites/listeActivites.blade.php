@@ -11,14 +11,29 @@
     <br class="mb-4">
     <strong> Liste des activites:</strong>
     @if ($activites->count())
-        @foreach ($activites as $activite)
-            <br>
-            <a href="{{ route('pageActivite', $activite) }}">{{ $activite->nom }}</a>
-            {{-- <a href="{{ route('formationsEducatrice') }}">Ajouter
-                formation/specialistaion</a> --}}
-            <a href="{{ route('inscrireenfant', $activite) }}">Inscrire enfant</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nom</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
 
-        @endforeach
+            @foreach ($activites as $activite)
+                <br>
+                <tbody>
+                    <tr>
+                        <td> <a href="{{ route('pageActivite', $activite) }}">{{ $activite->nom }}</a>
+                        </td>
+                        <td> <a href="{{ route('inscrireenfant', $activite) }}">Inscrire enfant</a></td>
+                    </tr>
+
+                </tbody>
+
+
+            @endforeach
+        </table>
+
     @else
         <p>Pas d'activite</p>
     @endif

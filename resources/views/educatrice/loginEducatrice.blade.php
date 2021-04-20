@@ -9,7 +9,7 @@
     @endif
 
     {{-- Formulaire d'authentification --}}
-    <form class="needs-validation" action="{{ route('logineducatrice') }}" method="post" novalidate>
+    <form class="mx-auto" action="{{ route('logineducatrice') }}" method="post" novalidate>
         @csrf
 
         <div class="mb-3">

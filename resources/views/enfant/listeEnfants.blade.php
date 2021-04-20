@@ -10,13 +10,21 @@
 
     {{-- Recuperer la liste des enfants et afficher --}}
     <br class="mb-4">
-    <strong> Liste des enfants:</strong>
     @if ($enfants->count())
-        @foreach ($enfants as $enfant)
-            <br>
-            <a href="{{ route('pageEnfant', $enfant) }}">{{ $enfant->name }} {{ $enfant->lastname }}</a>
 
-        @endforeach
+        <div class="card mx-auto" style="width: 18rem;">
+            <p class="fw-bold"> Liste des enfants:</p>
+            <ul class="list-group list-group-flush">
+
+                @foreach ($enfants as $enfant)
+                    <br>
+                    <li class="list-group-item"><a href="{{ route('pageEnfant', $enfant) }}">{{ $enfant->name }}
+                            {{ $enfant->lastname }}</a></li>
+
+                @endforeach
+            </ul>
+
+        </div>
     @else
         <p>Pas d'enfants</p>
     @endif

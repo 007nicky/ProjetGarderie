@@ -14,6 +14,30 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <style>
+        .banner {
+            background-image: url({{ asset('images/11.jpeg') }});
+        }
+
+        .bannerParticipant {
+            background-image: url({{ asset('images/2.jpg') }});
+        }
+
+        .bannerJeu {
+            background-image: url({{ asset('images/4.jpg') }});
+        }
+
+        .bannerSortie {
+            background-image: url({{ asset('images/5.jpg') }});
+        }
+
+        .bannerListe {
+            background-image: url({{ asset('images/8.jpg') }});
+        }
+
+    </style>
+
 </head>
 
 <body>

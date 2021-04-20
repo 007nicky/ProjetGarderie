@@ -60,7 +60,7 @@
                 </div>
                 <br>
                 <div class="form-row">
-                    <span for="specialisation" class="text-muted">Date d'embauche</span>
+                    <span for="date_embauche" class="text-muted">Date d'embauche</span>
 
                     <input type="date" class="form-control" name="date_embauche" id="date_embauche"
                         placeholder="Date d'embauche de l'educatrice" value="{{ old('lastname') }}" required>
@@ -70,7 +70,7 @@
 
                 <br>
                 <div class="form-row">
-                    <span for="specialisation" class="text-muted">Formations</span>
+                    <span for="formation" class="text-muted">Formations</span>
                     <input type="text" class="form-control" name="formation" id="formation"
                         placeholder="Ajouter une formation" value="{{ old('formation') }}" required>
 
